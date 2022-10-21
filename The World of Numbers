@@ -1,0 +1,1 @@
+read X; read Y; echo -e "$[X+Y]\n$[X-Y]\n$[X*Y]\n$[X/Y]"
