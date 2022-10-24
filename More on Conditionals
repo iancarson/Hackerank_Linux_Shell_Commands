@@ -1,0 +1,18 @@
+readarray -t arr
+result=0
+compare () {
+        for i in ${@}; do
+                (( arrs[${i}]++ ))
+        done
+        for x in ${arrs[@]}; do
+                 [ ${result} -lt ${x} ] && result=${x}
+        done
+        if [ ${result} -eq 3 ]; then
+                echo "EQUILATERAL"
+        elif [ ${result} -eq 2 ]; then
+                echo "ISOSCELES"
+        else
+                echo "SCALENE"
+        fi
+}
+compare ${arr[@]}
